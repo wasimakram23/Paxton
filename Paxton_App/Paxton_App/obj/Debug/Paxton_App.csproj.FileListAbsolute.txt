@@ -1,0 +1,15 @@
+E:\Wasim\BackupProject\Paxton_App\Paxton_App\bin\Debug\Paxton_App.exe.config
+E:\Wasim\BackupProject\Paxton_App\Paxton_App\obj\Debug\Paxton_App.csprojResolveAssemblyReference.cache
+E:\Wasim\BackupProject\Paxton_App\Paxton_App\bin\Debug\Paxton_App.exe
+E:\Wasim\BackupProject\Paxton_App\Paxton_App\bin\Debug\Paxton_App.pdb
+E:\Wasim\BackupProject\Paxton_App\Paxton_App\bin\Debug\Paxton.Net2.OEMClientLibrary.dll
+E:\Wasim\BackupProject\Paxton_App\Paxton_App\obj\Debug\Paxton_App.exe
+E:\Wasim\BackupProject\Paxton_App\Paxton_App\obj\Debug\Paxton_App.pdb
+E:\Wasim\BackupProject\Paxton_App\Paxton_App\bin\Debug\GemBox.Spreadsheet.dll
+E:\Wasim\BackupProject\Paxton_App\Paxton_App\bin\Debug\GemBox.Spreadsheet.xml
+E:\Wasim\BackupProject\Paxton_App\Paxton_App\obj\Debug\Paxton_App.csproj.ResolveComReference.cache
+E:\Wasim\BackupProject\Paxton_App\Paxton_App\bin\Debug\Syncfusion.Compression.Base.dll
+E:\Wasim\BackupProject\Paxton_App\Paxton_App\bin\Debug\Syncfusion.Licensing.dll
+E:\Wasim\BackupProject\Paxton_App\Paxton_App\bin\Debug\Syncfusion.XlsIO.Base.dll
+E:\Wasim\BackupProject\Paxton_App\Paxton_App\bin\Debug\Syncfusion.Compression.Base.xml
+E:\Wasim\BackupProject\Paxton_App\Paxton_App\bin\Debug\Syncfusion.XlsIO.Base.xml
