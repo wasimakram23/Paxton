@@ -1,0 +1,14 @@
+E:\Wasim\BackupProject\PaxtonReportService\PaxtonReportService\bin\Release\PaxtonReportService.exe.config
+E:\Wasim\BackupProject\PaxtonReportService\PaxtonReportService\bin\Release\PaxtonReportService.exe
+E:\Wasim\BackupProject\PaxtonReportService\PaxtonReportService\bin\Release\PaxtonReportService.pdb
+E:\Wasim\BackupProject\PaxtonReportService\PaxtonReportService\bin\Release\Paxton.Net2.OEMClientLibrary.dll
+E:\Wasim\BackupProject\PaxtonReportService\PaxtonReportService\bin\Release\Syncfusion.Compression.Base.dll
+E:\Wasim\BackupProject\PaxtonReportService\PaxtonReportService\bin\Release\Syncfusion.Licensing.dll
+E:\Wasim\BackupProject\PaxtonReportService\PaxtonReportService\bin\Release\Syncfusion.XlsIO.Base.dll
+E:\Wasim\BackupProject\PaxtonReportService\PaxtonReportService\bin\Release\Syncfusion.Compression.Base.xml
+E:\Wasim\BackupProject\PaxtonReportService\PaxtonReportService\bin\Release\Syncfusion.XlsIO.Base.xml
+E:\Wasim\BackupProject\PaxtonReportService\PaxtonReportService\obj\Release\PaxtonReportService.ProjectInstaller.resources
+E:\Wasim\BackupProject\PaxtonReportService\PaxtonReportService\obj\Release\PaxtonReportService.csproj.GenerateResource.Cache
+E:\Wasim\BackupProject\PaxtonReportService\PaxtonReportService\obj\Release\PaxtonReportService.exe
+E:\Wasim\BackupProject\PaxtonReportService\PaxtonReportService\obj\Release\PaxtonReportService.pdb
+E:\Wasim\BackupProject\PaxtonReportService\PaxtonReportService\obj\Release\PaxtonReportService.csprojResolveAssemblyReference.cache

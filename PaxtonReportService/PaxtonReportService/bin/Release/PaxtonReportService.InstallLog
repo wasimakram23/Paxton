@@ -1,0 +1,47 @@
+﻿Installing assembly 'E:\Wasim\BackupProject\PaxtonReportService\PaxtonReportService\bin\Release\PaxtonReportService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = E:\Wasim\BackupProject\PaxtonReportService\PaxtonReportService\bin\Release\PaxtonReportService.exe
+   logfile = E:\Wasim\BackupProject\PaxtonReportService\PaxtonReportService\bin\Release\PaxtonReportService.InstallLog
+Installing service ReportGenerator...
+Service ReportGenerator has been successfully installed.
+Creating EventLog source ReportGenerator in log Application...
+Committing assembly 'E:\Wasim\BackupProject\PaxtonReportService\PaxtonReportService\bin\Release\PaxtonReportService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = E:\Wasim\BackupProject\PaxtonReportService\PaxtonReportService\bin\Release\PaxtonReportService.exe
+   logfile = E:\Wasim\BackupProject\PaxtonReportService\PaxtonReportService\bin\Release\PaxtonReportService.InstallLog
+Installing assembly 'E:\Wasim\BackupProject\PaxtonReportService\PaxtonReportService\bin\Release\PaxtonReportService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = E:\Wasim\BackupProject\PaxtonReportService\PaxtonReportService\bin\Release\PaxtonReportService.exe
+   logfile = E:\Wasim\BackupProject\PaxtonReportService\PaxtonReportService\bin\Release\PaxtonReportService.InstallLog
+Installing service ReportGenerator...
+Creating EventLog source ReportGenerator in log Application...
+Rolling back assembly 'E:\Wasim\BackupProject\PaxtonReportService\PaxtonReportService\bin\Release\PaxtonReportService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = E:\Wasim\BackupProject\PaxtonReportService\PaxtonReportService\bin\Release\PaxtonReportService.exe
+   logfile = E:\Wasim\BackupProject\PaxtonReportService\PaxtonReportService\bin\Release\PaxtonReportService.InstallLog
+Restoring event log to previous state for source ReportGenerator.
+Uninstalling assembly 'E:\Wasim\BackupProject\PaxtonReportService\PaxtonReportService\bin\Release\PaxtonReportService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = E:\Wasim\BackupProject\PaxtonReportService\PaxtonReportService\bin\Release\PaxtonReportService.exe
+   logfile = E:\Wasim\BackupProject\PaxtonReportService\PaxtonReportService\bin\Release\PaxtonReportService.InstallLog
+Removing EventLog source ReportGenerator.
+Service ReportGenerator is being removed from the system...
+Service ReportGenerator was successfully removed from the system.
+Installing assembly 'E:\Wasim\BackupProject\PaxtonReportService\PaxtonReportService\bin\Release\PaxtonReportService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = E:\Wasim\BackupProject\PaxtonReportService\PaxtonReportService\bin\Release\PaxtonReportService.exe
+   logfile = E:\Wasim\BackupProject\PaxtonReportService\PaxtonReportService\bin\Release\PaxtonReportService.InstallLog
+Installing service ReportGenerator...
+Service ReportGenerator has been successfully installed.
+Creating EventLog source ReportGenerator in log Application...
+Committing assembly 'E:\Wasim\BackupProject\PaxtonReportService\PaxtonReportService\bin\Release\PaxtonReportService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   assemblypath = E:\Wasim\BackupProject\PaxtonReportService\PaxtonReportService\bin\Release\PaxtonReportService.exe
+   logfile = E:\Wasim\BackupProject\PaxtonReportService\PaxtonReportService\bin\Release\PaxtonReportService.InstallLog

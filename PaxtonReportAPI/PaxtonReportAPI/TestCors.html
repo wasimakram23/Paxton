@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Test CORS</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <button id="Save">Click Me</button>
+    <script>
+         $(document).ready(function () {
+             $("#Save").click(function () {
+                 $.ajax({
+                     url: 'http://localhost:65105/api/Event',
+                     type: 'GET',
+                     //dataType: 'json',
+                     success: function (data, textStatus, xhr) {
+                         console.log(data);
+                     },
+                     error: function (xhr, textStatus, errorThrown) {
+                         console.log('Error in Operation');
+                     }
+                 });
+             });
+         });
+    </script>
+
+</body>
+</html>
