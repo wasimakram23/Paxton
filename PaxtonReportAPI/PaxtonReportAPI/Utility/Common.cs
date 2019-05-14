@@ -22,7 +22,7 @@ namespace PaxtonReportAPI.Utility
                 datetime = datetime.Replace(" PM", "");
                 datetime = datetime.Replace(" AM", "");
                 string[] parts = datetime.Split(' ');
-                string[] date = parts[0].Split( '/', ' ');
+                string[] date = parts[0].Split( '/', '-');
                 string[] time = parts[1].Split(':');
                 int hour = (isPM) ? Convert.ToInt16(time[0]) + 12 : Convert.ToInt16(time[0]);
                 DateTime result = new DateTime(

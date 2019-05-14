@@ -64,7 +64,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/08/2018 11:19:14</publishTime>
     </File>
     <File Include="bin/PaxtonReportAPI.dll">
-      <publishTime>04/15/2019 15:08:21</publishTime>
+      <publishTime>05/07/2019 15:23:21</publishTime>
+    </File>
+    <File Include="bin/PaxtonReportAPI.pdb">
+      <publishTime>05/07/2019 15:23:21</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
       <publishTime>06/18/2015 20:19:46</publishTime>
@@ -139,7 +142,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/10/2019 13:14:49</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>04/15/2019 14:58:23</publishTime>
+      <publishTime>04/23/2019 17:19:06</publishTime>
     </File>
   </ItemGroup>
 </Project>

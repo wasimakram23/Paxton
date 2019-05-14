@@ -31,7 +31,6 @@ namespace PaxtonReportAPI.Repository
             oemClient = new OemClient(ip, PORT);
             common=new Common();
         }
-
         public Result getEvent()
         {
 
@@ -48,7 +47,12 @@ namespace PaxtonReportAPI.Repository
                 List<EventModel> eventList = new List<EventModel>();
                 DataSet ds = oemClient.QueryDb(query);
                 DataTable dt = ds.Tables[0];
-                for (int i = 0; i < dt.Rows.Count; i++)
+                int size = dt.Rows.Count;
+                var options = new ParallelOptions()
+                {
+                    MaxDegreeOfParallelism = 10
+                };
+                Parallel.For(0, size,  i =>
                 {
                     var eventInfo = new EventModel();
                     eventInfo.dateTime = dt.Rows[i][0].ToString() ?? "";
@@ -59,7 +63,7 @@ namespace PaxtonReportAPI.Repository
                     eventInfo.Event = dt.Rows[i][5].ToString() ?? "";
                     eventInfo.details = dt.Rows[i][6].ToString() ?? "";
                     eventList.Add(eventInfo);
-                }
+                });
                 result.status = true;
                 result.List = eventList;
                 return result;
@@ -82,7 +86,12 @@ namespace PaxtonReportAPI.Repository
                 List<EventModel> eventList = new List<EventModel>();
                 DataSet ds = oemClient.QueryDb(query);
                 DataTable dt = ds.Tables[0];
-                for (int i = 0; i < dt.Rows.Count; i++)
+                int size = dt.Rows.Count;
+                var options = new ParallelOptions()
+                {
+                    MaxDegreeOfParallelism = 10
+                };
+                Parallel.For(0, size, i =>
                 {
                     var eventInfo = new EventModel();
                     eventInfo.dateTime = dt.Rows[i][0].ToString() ?? "";
@@ -93,7 +102,7 @@ namespace PaxtonReportAPI.Repository
                     eventInfo.Event = dt.Rows[i][5].ToString() ?? "";
                     eventInfo.details = dt.Rows[i][6].ToString() ?? "";
                     eventList.Add(eventInfo);
-                }
+                });
                 result.status = true;
                 result.List = eventList;
                 return result;
@@ -116,46 +125,46 @@ namespace PaxtonReportAPI.Repository
                 startDate = "" + year + "-" + month + "-" + day;
             try
             {
-                query = "select distinct u.UserID,u.Field12_50 as 'UserCode' from EventsEx as e"
+                query = "select distinct n.Field12_50 as 'userCode', CAST(m.EventTime AS DATE) as 'date'," 
+                        +" (select top(1)EventTime from EventsEx  where PeripheralName like '%:In' and UserID = m.UserID and CAST(EventTime AS DATE) = CONVERT(date, '"+startDate+"') order by EventTime asc) as 'inTime',"
+                        +" (select top(1)EventTime from EventsEx where PeripheralName like '%:Out' and UserID = m.UserID and CAST(EventTime AS DATE) = CONVERT(date, '" + startDate + "') order by EventTime desc) as 'outTime',"
+                        + " (select top(1)PeripheralName from EventsEx where PeripheralName like '%:In' and UserID = m.UserID and CAST(EventTime AS DATE) = CONVERT(date, '" + startDate + "') order by EventTime asc) as 'inLocation',"
+                        +" (select top(1)PeripheralName from EventsEx where PeripheralName like '%:Out' and UserID = m.UserID and CAST(EventTime AS DATE) = CONVERT(date, '" + startDate + "') order by EventTime desc) as 'outLocation'"
+                        + " from EventsEx m inner"
+                        +" join UsersEx n on m.UserID = n.UserID where CAST(EventTime AS DATE) = CONVERT(date, '" + startDate + "') and m.UserID in"
+                        +" (select distinct e.UserID from EventsEx as e"
                         +" inner join UsersEx u on e.UserID = u.UserID where"
-                        +" CAST(EventTime AS DATE) = CONVERT(date, '"+startDate+"')"
+                        +" CAST(EventTime AS DATE) = CONVERT(date, '" + startDate + "')"
                         +" and e.PeripheralName like '%:Out' and u.Field12_50 is not null"
-                        +" and e.UserID in ("
-                        +" select distinct u.UserID from EventsEx as e"
+                        +" and e.UserID in (select distinct u.UserID from EventsEx as e"
                         +" inner join UsersEx u on e.UserID = u.UserID"
-                        +" where CAST(EventTime AS DATE)= CONVERT(date, '"+startDate+"') and e.PeripheralName like '%:In')";
+                        +" where CAST(EventTime AS DATE)= CONVERT(date, '" + startDate + "') and e.PeripheralName like '%:In'))";
                 users = oemClient.GetListOfOperators().UsersDictionary();
                 net2Methods = oemClient.AuthenticateUser(0, password);
                 List<Attendes> attendesList = new List<Attendes>();
                 DataSet userSet = oemClient.QueryDb(query);
                 DataTable userTable = userSet.Tables[0];
-                var userList = from data in userTable.AsEnumerable()
-                               select new
-                               {
-                                   userId = Convert.ToInt32(data.Field<object>("UserID")),
-                                   userCode = Convert.ToString(data.Field<object>("UserCode"))
-                               };
-                Parallel.ForEach(userList, item =>
+                int size = userTable.Rows.Count;
+                var options = new ParallelOptions()
+                {
+                    MaxDegreeOfParallelism = 10
+                };
+                Parallel.For(0,size, options,i =>
                  {
                      Attendes info = new Attendes();
                      info.date = startDate;
-                     info.elployeeID = item.userCode;
-                     Info dailyIn = getInfo(item.userId, startDate, "IN");
-                     Info dailyOut = getInfo(item.userId, startDate, "OUT");
-                     info.inTime = dailyIn.time;
-                     info.inLocation = dailyIn.location;
-                     info.outTime = dailyOut.time;
-                     info.outLocation = dailyOut.location;
-                     info.duration = common.getDuration(dailyIn.time, dailyOut.time);
+                     info.elployeeID = userTable.Rows[i][0].ToString()??"";
+                     info.inTime = userTable.Rows[i][2].ToString();
+                     info.inLocation = userTable.Rows[i][4].ToString();
+                     info.outTime = userTable.Rows[i][3].ToString();
+                     info.outLocation = userTable.Rows[i][5].ToString();
+                     info.duration = common.getDuration(info.inTime,info.outTime );
                      if (!info.duration.Contains('-'))
                         attendesList.Add(info);
-                     else
-                        user += 1;
                      
                  });
                 result.status = true;
                 result.List = attendesList;
-                result.message = "Valid:"+attendesList.Count+"Negetive:" + user+"Total:"+userList.Count();
                 return result;
             }
             catch (Exception ex)
